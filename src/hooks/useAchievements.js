@@ -12,7 +12,7 @@ import { ACHIEVEMENTS } from '../utils/achievementsData';
  *   emoji: '🍽️',                    // shown in toast/list
  *   condition: (ctx) => boolean     // unlock test (pure function)
  * }
- *   where ctx = { stats, growthStage, ageMinutes, petState }
+ *   ctx = { stats, growthStage, ageMinutes, petState }
  *
  * Only the hook **stores** and **signals** unlocks; it never decides what
  * qualifies—that logic lives in ACHIEVEMENTS.condition.
@@ -82,7 +82,7 @@ export default function useAchievements(petState) {
     });
   }, [achievements]);
 
-  // Reset achievements state & localStorage
+  // Reset achievements state & localStorage for reset button
   const resetAchievements = useCallback(() => {
     localStorage.removeItem('achievements');
     ACHIEVEMENTS.forEach(a => localStorage.removeItem(`achv:${a.id}:time`));
