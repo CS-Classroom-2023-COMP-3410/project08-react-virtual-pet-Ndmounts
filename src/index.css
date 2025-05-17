@@ -1,0 +1,219 @@
+/* Base Styles */
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* Layout Helpers */
+.container {
+  width: 100%;
+  max-width: 48rem; /* 768px */
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+
+/* Home Page */
+.home-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-block: 2rem;
+}
+
+/* Action Buttons Grid */
+.action-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+@media (min-width: 640px) {
+  .action-buttons {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* ActionButton */
+.action-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.75rem;
+  background: #5c6ac4;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+.action-button:active {
+  transform: scale(0.95);
+}
+.action-button:disabled {
+  background: #d1d5db;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+/* StatusBar */
+.status-bar {
+  width: 100%;
+}
+.status-bar__header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+  text-transform: capitalize;
+}
+.status-bar__track {
+  width: 100%;
+  height: 0.5rem;
+  background: #e5e7eb;
+  border-radius: 0.375rem;
+  overflow: hidden;
+}
+.status-bar__fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+.status-bar__fill--high   { background: #16a34a; }
+.status-bar__fill--medium { background: #eab308; }
+.status-bar__fill--low    { background: #dc2626; }
+
+/* PetDisplay */
+.pet-display {
+  position: relative;
+  font-size: 3rem;
+  user-select: none;
+}
+.pet-display__overlay {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  font-size: 1.25rem;
+  animation: bounce 0.6s infinite alternate;
+}
+@keyframes bounce {
+  to { transform: translateY(-0.25rem); }
+}
+
+/* Achievement Toast */
+.toast {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-left: 4px solid #facc15;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  max-width: 20rem;
+  animation: fadeIn 0.3s ease-out;
+}
+.toast__emoji {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.toast__text h4 {
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+.toast__text p {
+  font-size: 0.75rem;
+  color: #4b5563;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -1rem); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* Achievement List */
+.achievement-list {
+  display: grid;
+  gap: 1rem;
+}
+.achievement-card {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  background: #f3f4f6;
+}
+.achievement-card--unlocked {
+  background: #d1fae5;
+}
+.achievement-card__emoji {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.achievement-card__info h5 {
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+.achievement-card__info p {
+  font-size: 0.75rem;
+  color: #4b5563;
+}
+
+/* Header & Footer Helpers */
+.app-header {
+  background: #4f46e5;
+  color: #fff;
+}
+.app-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1rem;
+}
+.app-header .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.app-header .nav-list a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+}
+.app-header .nav-list a.active {
+  text-decoration: underline;
+}
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  padding-block: 1rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
