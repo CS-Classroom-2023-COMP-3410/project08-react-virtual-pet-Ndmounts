@@ -11,7 +11,8 @@
   "dependencies": {
     "jsx": "^0.9.89",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.0"
   },
   "scripts": {
     "dev": "vite --host",
