@@ -1,11 +1,6 @@
 // src/components/StatusBar.jsx
 import React from 'react';
 
-/**
- * Props:
- *  • label – string (e.g. "hunger")
- *  • value – 0‑100 number
- */
 export default function StatusBar({ label, value }) {
   const pct = Math.round(value);
 
