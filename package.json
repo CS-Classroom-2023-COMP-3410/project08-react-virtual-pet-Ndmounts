@@ -7,6 +7,7 @@
     "gh-pages": "^6.3.0",
     "vite": "^6.3.5"
   },
+  "homepage": "https://Ndmounts.github.io/https://github.com/CS-Classroom-2023-COMP-3410/project08-react-virtual-pet-Ndmounts",
   "dependencies": {
     "jsx": "^0.9.89",
     "react": "^19.1.0",
@@ -15,7 +16,9 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
